@@ -1,0 +1,38 @@
+
+
+
+    .banner {
+      background-image: url('../../asseets/homepage-bg.png'); /* Correct path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 96vh;
+    }
+
+    .skill {
+      background-image: url('../../asseets/desktopskil-bg.png'); /* Correct path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 96vh;
+    }
+  
+    @media screen and (min-width: 600px) and (max-width: 1024px) {
+      .banner {
+        background-image: url('../../asseets/tab-hompage-bg.png'); /* Correct path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 96vh;
+      }
+    }
+@media screen and (max-width: 640px) {
+    .banner {
+      background-image: url('../../asseets/mobile-homepage-bg.png'); /* Correct path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 96vh;
+    }
+  }
+  
