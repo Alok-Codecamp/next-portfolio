@@ -4,6 +4,9 @@ import "./globals.css";
 import { ReactNode } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import ThemeProvider from "./theme-provider";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import Providers from "@/lib/providers/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,18 +25,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}:{children:ReactNode}) {
+}: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      >
-       <ThemeProvider>
-       <Navbar/>
-        {children}
-        </ThemeProvider> 
-        
-      </body>
-    </html>
+    <Providers>
+      <ThemeProvider>
+        <html lang="en" className="dark">
+          <body
+            className={`dark:bg-red-600 ${geistSans.variable} ${geistMono.variable} antialiased `}
+          >
+            <Navbar />
+            {children}
+          </body>
+        </html>
+      </ThemeProvider>
+    </Providers>
+
   );
 }
