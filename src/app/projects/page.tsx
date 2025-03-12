@@ -16,21 +16,21 @@ const ProjectsPage = async () => {
 
 
     return (
-        <main className="bg-white dark:bg-black">
+        <main className="bg-white dark:bg-black text-center my-24">
             <header>
-                <h1>My Recent Works</h1>
+                <h1 className="text-2xl mb-12">My Recent Works</h1>
             </header>
             <section className='pb-20'>
-                <h2 className='text-center text-4xl mb-8' >Featured Work</h2>
+
                 {
-                    data === undefined ? [1, 2, 3].map((item: number, index: number) => (<div key={index} className=' grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-10 w-fit ml-auto mr-auto'> <Skeleton /></div>))
+                    data === undefined ? [1, 2, 3].map((item: number, index: number) => (<div key={index} className=' grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-10 w-fit ml-auto mr-auto'> <Skeleton key={index} /></div>))
                         :
                         <div className=' grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-10 w-fit ml-auto mr-auto'>
 
                             {
                                 data?.data?.map((item: IProject, index: number) => (
 
-                                    <FeaturedWorks darkmode={true} data={item} />
+                                    <FeaturedWorks key={index} darkmode={true} data={item} />
 
                                 ))
                             }

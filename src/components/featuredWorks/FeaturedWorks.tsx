@@ -21,7 +21,7 @@ export const FeaturedWorks = ({ darkmode, data }: { darkmode: boolean, data: IPr
                 <p><span className="text-[18px]">Description</span>: {data?.breaf} </p>
             </div>
             <div className="flex items-center justify-between my-4">
-                <Link href={`/${data?._id}`} className=" bg-[#785888] text-white py-1.5 px-4 rounded-3xl ">Learn More</Link>
+                <Link href={`/projects/${data?._id}`} className=" bg-[#785888] text-white py-1.5 px-4 rounded-3xl ">Learn More</Link>
                 <Link href={data?.link?.live} target="_blank" className=" bg-[#785888] text-white  py-1.5 px-4 rounded-3xl">Visit Online</Link>
             </div>
         </div>

@@ -9,7 +9,7 @@ const Navbar = ({ }) => {
     return (
 
         <ThemeProvider>
-            <nav className='text-black dark:bg-red-800 py-2 px-12 fixed top-2 left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-2xl z-1'>
+            <nav className={`${darkmode ? 'text-white' : 'text-black'} py-2 px-12 fixed top-2 left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-2xl z-1`}>
                 <ul className='flex items-center justify-center'>
                     <li className='lg:mx-4 mx-2'>
                         <Link href="/home">Home</Link>
@@ -18,7 +18,7 @@ const Navbar = ({ }) => {
                         <Link href="/projects">Projects</Link>
                     </li>
                     <li className='lg:mx-4 mx-2'>
-                        <Link href="/Blogs">Blogs</Link>
+                        <Link href="/blogs">Blogs</Link>
                     </li>
                     <li className='lg:mx-4 mx-2'>
                         <Link href="/contact">contact</Link>

@@ -22,3 +22,11 @@ export interface IProject {
     DevelopmentWorkflow: string[];
     notes?: string;
 }
+
+export interface IBlog {
+    image: string;
+    title: string;
+    content: string;
+    publishDate: Date;
+    like: number;
+}

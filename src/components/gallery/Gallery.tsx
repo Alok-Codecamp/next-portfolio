@@ -1,23 +1,29 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
-import { FaCross } from "react-icons/fa";
 import { TbXboxXFilled } from "react-icons/tb";
+import { motion } from 'framer-motion'
 
 const Gallery = ({ item }: { item: string }) => {
     const [openPhoto, setOpenPhoto] = useState(false);
 
     return (
-        <div className="border border-amber-500">
+        <div className=" m-4">
             {!openPhoto && (
-                <Image
-                    onClick={() => setOpenPhoto(true)}
-                    src={item}
-                    width={200}
-                    height={200}
-                    alt="project image"
-                    className="cursor-pointer"
-                />
+                <motion.div
+                    whileHover={{ scale: 1.4 }}
+                    whileTap={{ scale: 1.4 }}
+                    className="w-fit"
+                >
+                    <Image
+                        onClick={() => setOpenPhoto(true)}
+                        src={item}
+                        width={200}
+                        height={100}
+                        alt="project image"
+                        className="cursor-pointer"
+                    />
+                </motion.div>
             )}
 
             {openPhoto && (
