@@ -8,20 +8,21 @@ const Gallery = ({ item }: { item: string }) => {
     const [openPhoto, setOpenPhoto] = useState(false);
 
     return (
-        <div className=" m-4">
+        <div className="m-2">
             {!openPhoto && (
                 <motion.div
                     whileHover={{ scale: 1.4 }}
                     whileTap={{ scale: 1.4 }}
-                    className="w-fit"
+
                 >
                     <Image
                         onClick={() => setOpenPhoto(true)}
                         src={item}
-                        width={200}
-                        height={100}
                         alt="project image"
-                        className="cursor-pointer"
+                        width={0}
+                        height={0}
+                        className="cursor-pointer w-[200px] h-[100px] object-cover rounded-md"
+                        unoptimized
                     />
                 </motion.div>
             )}

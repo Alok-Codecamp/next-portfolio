@@ -1,12 +1,10 @@
-import { IProject } from "@/app/types/types"
-import { div } from "framer-motion/client"
+import { IProject } from "@/types/types"
 import Image from "next/image"
 import Link from "next/link";
 
-export const FeaturedWorks = ({ darkmode, data }: { darkmode: boolean, data: IProject }) => {
-
+export const FeaturedWorks = ({ data }: { data: IProject }) => {
     return (
-        <div className={`dark:bg-white/10 backdrop-blur-lg bg-[#f0e5f8] w-96 p-4 rounded-2xl shadow-lg border border-white/20 text-center`}>
+        <div className={` backdrop-blur-lg bg-[#f0e5f8] w-96 p-4 rounded-2xl shadow-lg border border-white/20 text-center text-gray-700`}>
             <div className="w-fit ml-auto mr-auto">
                 <Image
                     src={data?.banner}

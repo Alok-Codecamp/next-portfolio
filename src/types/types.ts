@@ -24,6 +24,7 @@ export interface IProject {
 }
 
 export interface IBlog {
+    _id: string;
     image: string;
     title: string;
     content: string;

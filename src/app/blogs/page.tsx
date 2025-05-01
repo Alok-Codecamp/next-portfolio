@@ -1,17 +1,20 @@
 import BlogCard from "@/components/blogCard/BlogCard";
-import { IBlog } from "../types/types";
+import { IBlog } from "../../types/types";
 
 
 const BlogPage = async () => {
-    const res = await fetch('http://localhost:5000/blogs')
+    const dark = true;
+    const res = await fetch('https://next-portfolio-server-phi.vercel.app/blogs')
     const blogs = await res.json()
     return (
         <div>
-            {
-                !blogs ? <></> : blogs?.data?.map((item: IBlog, index: number) => (
-                    <BlogCard key={index} blog={item} />
-                ))
-            }
+            <section className={`grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 ${dark && 'bg-black'}`}>
+                {
+                    !blogs ? <></> : blogs?.data?.map((item: IBlog, index: number) => (
+                        <BlogCard key={index} blog={item} />
+                    ))
+                }
+            </section>
         </div>
     );
 }

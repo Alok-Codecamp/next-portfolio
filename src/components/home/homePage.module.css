@@ -1,136 +1,114 @@
 .bannerDark {
-      background-image: url('../../asseets/homepage-bg.png'); /* Correct path */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 96vh;
-    }
+  background-image: url("../../asseets/homepage-bg.png"); /* Correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 96vh;
+}
 
-    .bannerLight{
-      background-image: url('../../asseets/desktop-banner-bg-light.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 96vh;
-    }
+.bannerLight {
+  background-image: url("../../asseets/desktop-banner-bg-light.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 96vh;
+}
 
-    .skillLight {
-      background-color: white;
-      color: black;
-    
-    }
-    .skillDark {
-      background-color:#1E1821;
-      color: white;
-     
-    }
-    .resume{
-      color: white;
-      font-weight: bold;
-      background-color: #785888;
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      position: absolute;
-      top: 84%;
-      left: 48%;
-      border-radius: 26px;
-    }
-  
-    .featuredWorksLight{
-      background-color: white;
-      color: black;
-    }
-    .featuredWorksDark{
-      background-color:#1E1821;
-      color: white;
-    }
-    @media screen and (min-width: 600px) and (max-width: 1024px) {
-      .bannerDark {
-        background-image: url('../../asseets/tab-hompage-bg.png'); /* Correct path */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 96vh;
-      }
-      .bannerLight {
-        background-image: url('../../asseets/tab-banner-bg-light.png'); /* Correct path */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 96vh;
-      }
+.skillLight {
+  background-color: white;
+  color: black;
+}
+.skillDark {
+  background-color: #1e1821;
+  color: white;
+}
 
-      .skillLight {
-          background-color: white;
-          color: black;
-     
-      }
-      .skillDark {
-        background-color:#1E1821;
-        color: white;
-     
-      }
+.featuredWorksLight {
+  background-color: white;
+  color: black;
+}
+.featuredWorksDark {
+  background-color: #1e1821;
+  color: white;
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .bannerDark {
+    background-image: url("../../asseets/tab-hompage-bg.png"); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 96vh;
+  }
+  .bannerLight {
+    background-image: url("../../asseets/tab-banner-bg-light.png"); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 96vh;
+  }
 
-      .resume{
-        color: white;
-        font-weight: bold;
-        background-color: #785888;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        position: absolute;
-        top: 86%;
-        left: 12%;
-        border-radius: 6px;
-      }
-      
-    }
+  .skillLight {
+    background-color: white;
+    color: black;
+  }
+  .skillDark {
+    background-color: #1e1821;
+    color: white;
+  }
+
+  .resume {
+    color: white;
+    font-weight: bold;
+    background-color: #785888;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 86%;
+    left: 12%;
+    border-radius: 6px;
+  }
+}
 @media screen and (max-width: 640px) {
   /* class for banner section  */
-    .bannerDark {
-      background-image: url('../../asseets/mobile-homepage-bg.png'); /* Correct path */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 96vh;
-    }
-    .bannerLight {
-      background-image: url('../../asseets/mobile-banner-bg-light.png'); /* Correct path */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 96vh;
-    }
-
-    /* class for skill section  */
-    .skillLight {
-      background-color: white;
-      color: black;
-     
-    }
-    .skillDark {
-      background-color:#1E1821;
-      color: white;
-     
-    }
-
-    /* class for resume download button  */
-    .resume{
-      color: white;
-      font-weight: bold;
-      background-color: #785888;
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      position: absolute;
-      top: 82%;
-      left: 12%;
-      border-radius: 6px;
-    }
+  .bannerDark {
+    background-image: url("../../asseets/mobile-homepage-bg.png"); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 96vh;
   }
-  
- 
+  .bannerLight {
+    background-image: url("../../asseets/mobile-banner-bg-light.png"); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 96vh;
+  }
+
+  /* class for skill section  */
+  .skillLight {
+    background-color: white;
+    color: black;
+  }
+  .skillDark {
+    background-color: #1e1821;
+    color: white;
+  }
+
+  /* class for resume download button  */
+  .resume {
+    color: white;
+    font-weight: bold;
+    background-color: #785888;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 82%;
+    left: 12%;
+    border-radius: 6px;
+  }
+}

@@ -7,9 +7,7 @@ import { RiJavascriptLine, RiNextjsLine, RiNodejsLine, RiTailwindCssLine } from 
 import { TbBrandReactNative, TbBrandRedux, TbBrandTypescript, TbLetterM } from 'react-icons/tb';
 import { SiExpress, SiJsonwebtokens, SiMongodb } from 'react-icons/si';
 
-type TProps = {
-    darkMood: boolean
-}
+
 
 export const FrontEndSkillsCard = ({ darkmode }: { darkmode: boolean }) => {
 

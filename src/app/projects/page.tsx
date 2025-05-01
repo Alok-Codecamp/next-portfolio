@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { IProject } from "../types/types";
+import { IProject } from "../../types/types";
 
 import { FeaturedWorks } from "@/components/featuredWorks/FeaturedWorks";
 import Skeleton from "@/components/skeleton/Skeleton";
@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 }
 
 const ProjectsPage = async () => {
-    const res = await fetch('http://localhost:5000/projects');
+    const res = await fetch('https://next-portfolio-server-phi.vercel.app/projects');
     const data = await res.json();
 
 
     return (
-        <main className="bg-white dark:bg-black text-center my-24">
+        <main className="bg-white text-center  border-4 border-yellow-600">
             <header>
                 <h1 className="text-2xl mb-12">My Recent Works</h1>
             </header>
@@ -30,7 +30,7 @@ const ProjectsPage = async () => {
                             {
                                 data?.data?.map((item: IProject, index: number) => (
 
-                                    <FeaturedWorks key={index} darkmode={true} data={item} />
+                                    <FeaturedWorks key={index} data={item} />
 
                                 ))
                             }

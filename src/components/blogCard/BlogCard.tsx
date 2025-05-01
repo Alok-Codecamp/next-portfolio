@@ -1,17 +1,18 @@
 "use client"
 
-import { IBlog } from "@/app/types/types";
+import { IBlog } from "@/types/types";
 import Image from "next/image";
+import Link from "next/link";
 
 
 
 // Define a type for the blog post
 
 const BlogCard = ({ blog }: { blog: IBlog }) => {
-    console.log(blog);
+    // console.log(blog);
     return (
-        <div className="max-w-lg mx-auto p-4">
-            <section className="shadow-lg rounded-xl overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20">
+        <div className="max-w-lg mx-auto p-4 m-4">
+            <section className="shadow-lg rounded-xl bg-white/10 backdrop-blur-lg border border-white/20">
                 <Image
                     src={blog.image}
                     width={100}
@@ -25,9 +26,9 @@ const BlogCard = ({ blog }: { blog: IBlog }) => {
                     {/* <p className="text-gray-300 text-sm mb-2">Published on: {blog.publishDate.toString()}</p> */}
                     <p className="text-gray-200 mb-4">{blog.content.substring(0, 100)}...</p>
                     <div className="flex justify-between items-center">
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        <Link href={`/blogs/${blog._id}`} className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
                             Read More
-                        </button>
+                        </Link>
                         <span className="text-gray-300">👍 {blog.like}</span>
                     </div>
                 </section>
