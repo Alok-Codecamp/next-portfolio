@@ -19,36 +19,36 @@ const HomePage = () => {
   // console.log(projects);
   return (
 
-    <main className='dark:bg-red-900'>
+    <main className=''>
 
       {/* header banner section  */}
       <header className="">
 
-        <section className="mt-20">
-          <div className='md:flex shadow-lg justify-between items-center  shadow-gray-600 md:px-20 px-4'>
-            <div className='rounded-full  p-2 border-2'>
-              <Image src={me} width={0} height={0} alt='me' className='rounded-full w-80 h-80' />
-            </div>
-            <div className='w-fit'>
-              <h1 className='text-4xl text-[#785888]'>Hi, I'm Alok Kumar <br />MERN Stack web developer</h1>
-              <p className='text-lg my-4 text-[#52385E]'> I specialize in building responsive, scalable, <br /> and high-performance web applications <br />using MongoDB, Express.js, React.js, and Node.js.</p>
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 1.2 }}
-                className="bg-[#785888] w-44 py-2 rounded-3xl text-center text-white"
-              >
-                <a href="/resume.pdf" download>Download Resume</a>
-              </motion.div>
-            </div>
+        <section className="mt-20 bg-white/5 backdrop-blur-md border border-white/20 rounded-xl shadow-lg md:flex justify-between items-center  md:px-20 px-4 py-6">
+          <div className='rounded-full  p-2 border-2 mb-4'>
+            <Image src={me} width={0} height={0} alt='me' className='rounded-full w-80 h-60 md:h-80' />
           </div>
+          <div className='w-fit'>
+            <h1 className='text-2 xl bg-gradient-to-r from-sky-400 to-teal-500 bg-clip-text text-transparent'>Hi, I'm Alok Kumar <br /></h1>
+            <h2 className='text-3xl md:text-4xl bg-gradient-to-r from-sky-400 to-teal-500 bg-clip-text text-transparent'>MERN Stack web developer</h2>
+            <p className='text-lg my-4'> I specialize in building responsive, scalable, <br /> and high-performance web applications <br />using MongoDB, Express.js, React.js, and Node.js.</p>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.2 }}
+              className="bg-sky-600 w-44 py-2 rounded-3xl text-center"
+            >
+              <a href="/resume.pdf" download>Download Resume</a>
+            </motion.div>
+          </div>
+
         </section>
       </header>
 
       {/* skill section  */}
-      <section className={`${styles.skillLight} py-10 `}>
-        <h2 className='text-center text-4xl mb-8'>Skills & Expertise</h2>
+      <section className={` py-10 `}>
+        <h2 className='text-center text-white text-4xl mb-8'>Skills & Expertise</h2>
         {/* Front end section  */}
-        <div className={`py-10 bg-[#D8D7D8] shadow-lg rounded-md text-center`}>
+        <div className={`py-10 shadow-lg rounded-md text-center`}>
 
 
           <div className='text-center grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2  gap-12 w-fit ml-auto mr-auto'>
@@ -56,7 +56,7 @@ const HomePage = () => {
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 1.2 }}
             >
-              <FrontEndSkillsCard darkmode={false} />
+              <FrontEndSkillsCard />
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.2 }}

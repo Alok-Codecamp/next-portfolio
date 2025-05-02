@@ -4,16 +4,12 @@ import "./globals.css";
 import { ReactNode } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Providers from "@/lib/providers/Providers";
+import { Source_Code_Pro } from 'next/font/google'
+const source = Source_Code_Pro({
+  subsets: ['cyrillic'],
+  display: 'swap',
+})
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Alok Portfolio",
@@ -30,7 +26,7 @@ export default function RootLayout({
     <Providers>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+          className={`${source.className} antialiased px-10`}
         >
           <Navbar />
           {children}

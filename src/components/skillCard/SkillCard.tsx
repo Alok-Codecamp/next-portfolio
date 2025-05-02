@@ -9,11 +9,11 @@ import { SiExpress, SiJsonwebtokens, SiMongodb } from 'react-icons/si';
 
 
 
-export const FrontEndSkillsCard = ({ darkmode }: { darkmode: boolean }) => {
+export const FrontEndSkillsCard = () => {
 
     return (
 
-        <div className={`${darkmode ? 'bg-white/10 backdrop-blur-lg' : 'bg-[#f0e5f8]'} w-60 p-2 rounded-2xl shadow-lg border border-white/20 text-center my-8 py-6 h-[40em]`}>
+        <div className={`bg-white/10 backdrop-blur-lg w-60 p-2 rounded-2xl shadow-lg border border-white/20 text-center my-8 py-6 h-[40em]`}>
 
             <Image
                 className='ml-auto mr-auto '

@@ -9,7 +9,7 @@ const Navbar = ({ }) => {
     return (
 
 
-        <nav className={` py-2 px-12 fixed top-2 left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-2xl z-1 text-black`}>
+        <nav className={` py-2 px-12 fixed top-2 left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-2xl z-1 `}>
             <ul className='flex items-center justify-center'>
                 <li className='lg:mx-4 mx-2'>
                     <Link href="/home">Home</Link>
