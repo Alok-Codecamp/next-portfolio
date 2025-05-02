@@ -3,6 +3,7 @@ import { IProject } from "../../types/types";
 
 import { FeaturedWorks } from "@/components/featuredWorks/FeaturedWorks";
 import Skeleton from "@/components/skeleton/Skeleton";
+import { getAllProjects } from "@/services/projects";
 
 
 export const metadata: Metadata = {
@@ -11,12 +12,12 @@ export const metadata: Metadata = {
 }
 
 const ProjectsPage = async () => {
-    const res = await fetch('https://next-portfolio-server-phi.vercel.app/projects');
-    const data = await res.json();
+
+    const data = await getAllProjects();
 
 
     return (
-        <main className="bg-white text-center  border-4 border-yellow-600">
+        <main className=" text-center">
             <header>
                 <h1 className="text-2xl mb-12">My Recent Works</h1>
             </header>

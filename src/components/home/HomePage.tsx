@@ -2,21 +2,64 @@
 
 import { useGetProjectsQuery } from '@/app/redux/api/projectsApi';
 import { FeaturedWorks } from '../featuredWorks/FeaturedWorks';
-import { AndroidSkillsCard, BackEndSkillsCard, FrontEndSkillsCard } from '../skillCard/SkillCard';
-import styles from './homePage.module.css'
 // import { useDarkmode } from '@/app/theme-provider';
 import { motion } from "framer-motion";
 import Skeleton from '../skeleton/Skeleton';
 import { IProject } from '@/types/types';
 import Image from 'next/image';
 import me from '@/asseets/me.png'
+import { FaCode, FaServer } from 'react-icons/fa6';
+
+import { useState } from 'react';
+import FrontendSkills from '../mySkills/frontendSkills/FrontendSkills';
+import { CiGrid42 } from 'react-icons/ci';
+import BackendSkills from '../mySkills/backendSkills/BackendSkills';
+import AllSkills from '../mySkills/allSkills/AllSkills';
+import { RiCodeSSlashFill, RiSettings5Fill } from 'react-icons/ri';
+import ProgrammingLanguage from '../mySkills/programmingLanguage/ProgrammingLanguage';
+import Tools from '../mySkills/tools/Tools';
+
 
 
 const HomePage = () => {
+  const [showFrontendSkills, setShowFrontendSkills] = useState(false);
+  const [showBackendSkills, setShowBackendSkills] = useState(false);
+  const [showProgrammingSkills, setShowProgrammingSkills] = useState(false);
+  const [showToolsSkills, setShowToolsSkills] = useState(false);
+  const [showAllSkills, setShowAllSkills] = useState(false);
+  const { data: projects, isLoading } = useGetProjectsQuery();
 
-  const { data: projects, isLoading } = useGetProjectsQuery([]);
+  console.log(projects);
+  const handleShowFrontend = () => {
+    setShowFrontendSkills(true);
+    setShowBackendSkills(false);
+    setShowProgrammingSkills(false);
+  };
 
-  // console.log(projects);
+  const handleShowBackend = () => {
+    setShowFrontendSkills(false);
+    setShowBackendSkills(true);
+    setShowProgrammingSkills(false);
+  };
+
+  const handleShowProgramming = () => {
+    setShowFrontendSkills(false);
+    setShowBackendSkills(false);
+    setShowProgrammingSkills(true);
+  };
+  const handleShowTools = () => {
+    setShowFrontendSkills(false);
+    setShowBackendSkills(false);
+    setShowProgrammingSkills(false);
+    setShowToolsSkills(true)
+  };
+  const handleShowAllSkills = () => {
+    setShowFrontendSkills(false);
+    setShowBackendSkills(false);
+    setShowProgrammingSkills(false);
+    setShowToolsSkills(true);
+    setShowAllSkills(true);
+  };
   return (
 
     <main className=''>
@@ -29,7 +72,7 @@ const HomePage = () => {
             <Image src={me} width={0} height={0} alt='me' className='rounded-full w-80 h-60 md:h-80' />
           </div>
           <div className='w-fit'>
-            <h1 className='text-2 xl bg-gradient-to-r from-sky-400 to-teal-500 bg-clip-text text-transparent'>Hi, I'm Alok Kumar <br /></h1>
+            <h1 className='text-2 xl bg-gradient-to-r from-sky-400 to-teal-500 bg-clip-text text-transparent'>Hi, I&apos;m Alok Kumar <br /></h1>
             <h2 className='text-3xl md:text-4xl bg-gradient-to-r from-sky-400 to-teal-500 bg-clip-text text-transparent'>MERN Stack web developer</h2>
             <p className='text-lg my-4'> I specialize in building responsive, scalable, <br /> and high-performance web applications <br />using MongoDB, Express.js, React.js, and Node.js.</p>
             <motion.div
@@ -46,33 +89,28 @@ const HomePage = () => {
 
       {/* skill section  */}
       <section className={` py-10 `}>
-        <h2 className='text-center text-white text-4xl mb-8'>Skills & Expertise</h2>
+        <div className='text-center w-fit mx-auto'>
+          <h2 className='  text-4xl mb-8'>Skills & Expertise</h2>
+          <p>A curated collection of my technical skills and proficiencies developed through <br /> education, personal projects, and hands-on experience.</p>
+        </div>
         {/* Front end section  */}
-        <div className={`py-10 shadow-lg rounded-md text-center`}>
 
+        <div className='my-6 flex justify-center items-center'>
+          <button onClick={handleShowFrontend} className='border border-white/20 backdrop:blur-md bg-white/10 shadow-md px-2 py-1 mx-2 rounded-4xl flex justify-center items-center'><CiGrid42 /> Frontend</button>
+          <button onClick={handleShowBackend} className='border border-white/20 backdrop:blur-md bg-white/10 shadow-md px-2 py-1 mx-2 rounded-4xl flex justify-center items-center'><FaServer /> Backend</button>
+          <button onClick={handleShowProgramming} className='border border-white/20 backdrop:blur-md bg-white/10 shadow-md px-2 py-1 mx-2 rounded-4xl flex justify-center items-center'><RiCodeSSlashFill />Programming Language </button>
+          <button onClick={handleShowTools} className='border border-white/20 backdrop:blur-md bg-white/10 shadow-md px-2 py-1 mx-2 rounded-4xl flex justify-center items-center'><RiSettings5Fill />Tools & Ecosystem</button>
+          <button onClick={handleShowAllSkills} className='border border-white/20 backdrop:blur-md bg-white/10 shadow-md px-2 py-1 mx-2 rounded-4xl flex justify-center items-center'><FaCode />All Skills </button>
+        </div>
 
-          <div className='text-center grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2  gap-12 w-fit ml-auto mr-auto'>
-            <motion.div
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 1.2 }}
-            >
-              <FrontEndSkillsCard />
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 1.2 }}
-            >
-              <BackEndSkillsCard darkmode={false} />
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 1.2 }}
-            >
-              <AndroidSkillsCard darkmode={false} />
-            </motion.div>
-          </div>
+        <div className='bg-white/10 backdrop-blur-lg px-6 py-10 rounded-2xl shadow-lg border border-white/20'>
+          {
+            showAllSkills ? (<AllSkills />) : showFrontendSkills ? (<FrontendSkills />) : showBackendSkills ? (<BackendSkills />) : showProgrammingSkills ? (<ProgrammingLanguage />) : showToolsSkills ? (<Tools />) : <AllSkills />
+          }
 
         </div>
+
+
 
       </section>
       {/* fetured word section  */}

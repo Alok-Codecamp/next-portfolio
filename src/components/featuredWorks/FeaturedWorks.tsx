@@ -4,13 +4,15 @@ import Link from "next/link";
 
 export const FeaturedWorks = ({ data }: { data: IProject }) => {
     return (
-        <div className={` backdrop-blur-lg bg-[#f0e5f8] w-96 p-4 rounded-2xl shadow-lg border border-white/20 text-center text-gray-700`}>
+        <div className={` backdrop-blur-lg bg-white/10 p-2 rounded-2xl shadow-lg border border-white/20 text-center`}>
             <div className="w-fit ml-auto mr-auto">
                 <Image
                     src={data?.banner}
                     alt="image"
-                    width={350}
-                    height={168}
+                    width={0}
+                    height={0}
+                    unoptimized
+                    className="w-96 rounded-2xl"
                 />
             </div>
             <div className="text-left">

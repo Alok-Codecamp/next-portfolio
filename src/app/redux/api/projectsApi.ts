@@ -7,8 +7,11 @@ export const projectsApi = createApi({
     reducerPath: 'projectsApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://next-portfolio-server-phi.vercel.app' }),
     endpoints: (builder) => ({
-        getProjects: builder.query({
-            query: () => '/projects'
+        getProjects: builder.query<any, void>({
+            query: () => ({
+                url: '/projects',
+                method: 'GET'
+            })
         })
     })
 })
